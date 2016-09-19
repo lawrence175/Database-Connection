@@ -11,14 +11,14 @@ input { width:300px; }
 
 <?php
 
-error_reporting(E_ALL ^ E_DEPRECATED);
+error_reporting(E_ALL ^ E_DEPRECATED); //Report all errors except E_DEPRECATED
 
 if( count($_POST) )
 {
    $OK = false;
    if( $MySQL = @mysql_connect($_POST['hostname'],$_POST['username'],$_POST['password']) )
    {
-      if( @mysql_select_db($_POST['diagnosis']) )
+      if( @mysql_select_db($_POST['DatabaseName']) )
       {
          echo '<h3>Connection Successful!</h3>';
          $OK = true;
